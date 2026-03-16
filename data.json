@@ -1,0 +1,50 @@
+{ "moviesSeries": [
+    {
+        "id": 1,
+        "movieTitle": "IT",
+        "category": "Horror",
+        "premier": 2017,
+        "movie/serie": "Movie",
+        "mainCharacter": "Pennywise"
+    },
+    {
+        "id": 2,
+        "movieTitle": "Harry Potter and the Deathly Hallows: Part 1",
+        "category": "Fantasy",
+        "premier": 2010,
+        "movie/serie": "Movie",
+        "mainCharacter": "Harry Potter"
+    },
+    {
+        "id": 3,
+        "movieTitle": "Kuroko's Basketball",
+        "category": "Anime",
+        "premier": 2012,
+        "movie/serie": "Serie",
+        "mainCharacter": "Tetsuya Kuroko"
+    },
+    {
+        "id": 4,
+        "movieTitle": "The Last Dance",
+        "category": "Documentary",
+        "premier": 2020,
+        "movie/serie": "Serie",
+        "mainCharacter": "Micael Jordan"
+    },
+    {
+        "id": 5,
+        "movieTitle": "How I Met Your Mother",
+        "category": "Comedy",
+        "premier": 2005,
+        "movie/serie": "Serie",
+        "mainCharacter": "Ted Mosby"
+    },
+    {
+        "id": 6,
+        "movieTitle": "The Conjuring",
+        "category": "Horror",
+        "premier": 2013,
+        "movie/serie": "Movie",
+        "mainCharacter": "Ed and Lorraine Warren"
+    }
+]}

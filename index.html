@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD-application</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Movies and Series</h1>
+
+    <div id="addInputs">
+        <input type="text" placeholder="Movie Title">
+        <input type="text" placeholder="Category">
+        <input type="text" placeholder="Premier">
+        
+        <select id="val" name="media">
+            <option value="movie">Movie</option>
+            <option value="serie">Serie</option>
+        </select>
+
+        <input type="text" placeholder="Main Character">
+        <button id="saveMovieBtn">Add</button>
+    </div>
+    <ul id="movieList"> </ul>
+
+    <div id="searchInputs">
+        <input type="text" placeholder="Movie Title">
+        <input type="text" placeholder="Category">
+        <input type="text" placeholder="Premier">
+        
+        <select id="searchOption" name="media">
+            <option value="all">All</option>
+            <option value="movie">Movie</option>
+            <option value="serie">Serie</option>
+        </select>
+        <input type="text" placeholder="Main Character">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div>
+        <button id="listAll">Show all</button>
+
+    </div>
+</body>
+
+</html>
