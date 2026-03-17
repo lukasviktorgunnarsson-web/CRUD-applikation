@@ -13,19 +13,19 @@
     <h1>Movies and Series</h1>
 
     <div id="addInputs">
-        <input type="text" placeholder="Movie Title">
-        <input type="text" placeholder="Category">
-        <input type="text" placeholder="Premier">
+        <input id="inputMovieTitle" type="text" placeholder="Movie Title">
+        <input id="inputCategory" type="text" placeholder="Category">
+        <input id="inputPremier" type="text" placeholder="Premier">
         
-        <select id="val" name="media">
-            <option value="movie">Movie</option>
-            <option value="serie">Serie</option>
+        <select id="selectMedia" name="media">
+            <option value="Movie">Movie</option>
+            <option value="Serie">Serie</option>
         </select>
 
-        <input type="text" placeholder="Main Character">
+        <input id="inputMainCha" type="text" placeholder="Main Character">
         <button id="saveMovieBtn">Add</button>
     </div>
-    <ul id="movieList"> </ul>
+    
 
     <div id="searchInputs">
         <input type="text" placeholder="Movie Title">
@@ -34,17 +34,19 @@
         
         <select id="searchOption" name="media">
             <option value="all">All</option>
-            <option value="movie">Movie</option>
-            <option value="serie">Serie</option>
+            <option value="Movie">Movie</option>
+            <option value="Serie">Serie</option>
         </select>
         <input type="text" placeholder="Main Character">
         <button id="searchBtn">Search</button>
     </div>
 
     <div>
-        <button id="listAll">Show all</button>
+        <button id="listAllBtn">Show all</button>
+        <button id="removeAllBtn">Clear</button>
 
     </div>
+    <ul id="movieList"> </ul>
 </body>
 
 </html>
