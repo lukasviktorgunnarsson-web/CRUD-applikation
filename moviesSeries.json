@@ -28,7 +28,7 @@
       "id": "4795",
       "movieTitle": "Batman: The Dark Knight Rises",
       "category": "Action",
-      "premier": "2012",
+      "premier": 2012,
       "movieSerie": "Movie",
       "mainCharacter": "Batman"
     },
@@ -36,42 +36,17 @@
       "id": "68b7",
       "movieTitle": "Friends",
       "category": "Comedy",
-      "premier": "1994",
+      "premier": 1994,
       "movieSerie": "Movie",
       "mainCharacter": "Rachael"
     },
     {
-      "id": "d103",
+      "id": "e7f6",
       "movieTitle": "Kurokos Basketball",
       "category": "Anime",
       "premier": "2012",
       "movieSerie": "Serie",
       "mainCharacter": "Kuroko & Kagami"
-    },
-    {
-      "id": "dbf9",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "2012",
-      "movieSerie": "Serie",
-      "mainCharacter": "Kuroko & Kagami"
-    },
-    {
-      "id": "c8fa",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "22",
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
-    },
-    {
-      "id": "3fda",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "1994",
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

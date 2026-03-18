@@ -28,19 +28,21 @@
     
 
     <div id="searchInputs">
-        <input type="text" placeholder="Movie Title">
-        <input type="text" placeholder="Category">
-        <input type="text" placeholder="Premier">
+        <input id="movieTitleSearch" type="text" placeholder="Movie Title">
+        <input id="categorySearch" type="text" placeholder="Category">
+        <input id="premierSearch" type="number" placeholder="Premier">
         
         <select id="searchOption" name="media">
             <option value="all">All</option>
             <option value="Movie">Movie</option>
             <option value="Serie">Serie</option>
         </select>
-        <input type="text" placeholder="Main Character">
+        <input id="mainChaSearch" type="text" placeholder="Main Character">
         <button id="searchBtn">Search</button>
     </div>
-
+    <div>
+        <ul id="searchList"></ul>
+    </div>
     <div>
         <button id="listAllBtn">Show all</button>
         <button id="removeAllBtn">Clear</button>

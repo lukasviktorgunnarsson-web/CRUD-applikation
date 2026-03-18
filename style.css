@@ -1,9 +1,22 @@
 #addInputs {
     width: 100vw;
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #searchInputs{
     width: 100vw;
-    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+#movieList{
+    
+    background-color: bisque;
+    height: auto;
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   list-style-position: inside;
 }

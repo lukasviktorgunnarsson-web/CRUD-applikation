@@ -8,31 +8,26 @@ let inputMainCha = document.getElementById("inputMainCha")
 const saveMovieBtn = document.getElementById("saveMovieBtn")
 const listAllBtn = document.getElementById("listAllBtn")
 const removeAllBtn = document.getElementById("removeAllBtn")
+let movieTitleSearch = document.getElementById("movieTitleSearch")
+let categorySearch = document.getElementById("categorySearch")
+let premierSearch = document.getElementById("premierSearch")
+let searchOption = document.getElementById("searchOption")
+let mainChaSearch = document.getElementById("mainChaSearch")
 
-
-function fetchAndShowMovies() {
-    fetch("http://localhost:3000/moviesSeries")
-        .then(res => res.json())
-        .then(data => {
-            printAllMovies(data);
-        });
-}
-
-
-
-
-
-async function printMovies() {
-    const response = await fetch("http://localhost:3000/moviesSeries")
-    const data = await response.json();
-}
+// async function printMovies() {
+//     const response = await fetch("http://localhost:3000/moviesSeries")
+//     const data = await response.json();
+// }
 
 function getAllMovies() {
     fetch("http://localhost:3000/moviesSeries")
         .then(res => res.json())
-        .then(data => printAllMovies(data));
+        .then(data => {
+            console.log("data", data)
+            data.map(user => {
+            })  
+    });
 }
-
 
 saveMovieBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -48,12 +43,13 @@ saveMovieBtn.addEventListener("click", (e) => {
             premier: inputPremier.value,
             movieSerie: selectMedia.value,
             mainCharacter: inputMainCha.value
-
+            
         })
+        
     })
         .then(res => res.json())
         .then(data => {
-            fetchAndShowMovies()
+            getAllMovies();
         })
         .catch(err => console.error("Error:", err));
 })
@@ -65,6 +61,7 @@ function printAllMovies(movies) {
 
     movies.forEach(movie => {
         const li = document.createElement("li");
+        li.classList.add("list")
         li.textContent = `${movie.movieTitle} - ${movie.category} - ${movie.premier} - ${movie.movieSerie} - ${movie.mainCharacter}`;
         movieList.appendChild(li);
 
@@ -72,15 +69,12 @@ function printAllMovies(movies) {
         deleteBtn.innerText = "Delete"
         li.appendChild(deleteBtn)
 
+
         deleteBtn.addEventListener("click", () => {
             fetch("http://localhost:3000/moviesSeries/" + movie.id, {
                 method: "DELETE"
-            }) // <--- Stänger objektet
+            }) 
                 .then(res => res.json())
-                .then(data => {
-                    console.log("Raderat", data);
-                    fetchAndShowMovies()
-                })
                 .catch(err => console.log(err));
         });
     })
@@ -91,7 +85,7 @@ listAllBtn.addEventListener("click", () => {
     fetch("http://localhost:3000/moviesSeries")
         .then(response => response.json())
         .then(data => {
-            fetchAndShowMovies()
+            printAllMovies(data);
         })
         .catch(error => console.error("Error:", error));
 });
@@ -105,4 +99,6 @@ function removeAllMovies() {
 removeAllBtn.addEventListener("click", () => {
     removeAllMovies();
 });
+
+
 
