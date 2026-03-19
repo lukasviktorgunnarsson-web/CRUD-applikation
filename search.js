@@ -1,9 +1,8 @@
 let searchList = document.getElementById("searchList")
 let movieTitleSearch = document.getElementById("movieTitleSearch")
 let categorySearch = document.getElementById("categorySearch")
-let premierSearch = document.getElementById("premierSearch")
 let searchOption = document.getElementById("searchOption")
-let mainChaSearch = document.getElementById("mainChaSearch")
+
 const searchBtn = document.getElementById("searchBtn")
 
 function getAllMovies() {
@@ -34,9 +33,7 @@ export default function searchMovies() {
     body: JSON.stringify({
         movieTitle: movieTitleSearch.value,
         category: categorySearch.value,
-        premier: premierSearch.value,
         movieSerie: searchOption.value,
-        mainCharacter: mainChaSearch.value
     })
     
     
@@ -50,7 +47,7 @@ function printAllMovies(movies) {
     movies.forEach(movie => {
         const li = document.createElement("li");
         li.classList.add("list")
-        li.textContent = `${movie.movieTitle} - ${movie.category} - ${movie.premier} - ${movie.movieSerie} - ${movie.mainCharacter}`;
+        li.textContent = `${movie.movieTitle} - ${movie.category} - ${movie.movieSerie}`;
         searchList.appendChild(li);
 
         let deleteBtn = document.createElement("button")

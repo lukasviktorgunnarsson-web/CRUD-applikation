@@ -4,49 +4,43 @@
       "id": "4",
       "movieTitle": "The Last Dance",
       "category": "Documentary",
-      "premier": 2020,
-      "movieSerie": "Serie",
-      "mainCharacter": "Micael Jordan"
+      "movieSerie": "Serie"
     },
     {
       "id": "5",
       "movieTitle": "How I Met Your Mother",
       "category": "Comedy",
-      "premier": 2005,
-      "movieSerie": "Serie",
-      "mainCharacter": "Ted Mosby"
+      "movieSerie": "Serie"
     },
     {
       "id": "6",
       "movieTitle": "The Conjuring",
       "category": "Horror",
-      "premier": 2013,
-      "movieSerie": "Movie",
-      "mainCharacter": "Ed and Lorraine Warren"
+      "movieSerie": "Movie"
     },
     {
       "id": "4795",
       "movieTitle": "Batman: The Dark Knight Rises",
       "category": "Action",
-      "premier": 2012,
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
+      "movieSerie": "Movie"
     },
     {
       "id": "68b7",
       "movieTitle": "Friends",
       "category": "Comedy",
-      "premier": 1994,
-      "movieSerie": "Movie",
-      "mainCharacter": "Rachael"
+      "movieSerie": "Movie"
     },
     {
-      "id": "e7f6",
+      "id": "8519",
       "movieTitle": "Kurokos Basketball",
       "category": "Anime",
-      "premier": "2012",
-      "movieSerie": "Serie",
-      "mainCharacter": "Kuroko & Kagami"
+      "movieSerie": "Serie"
+    },
+    {
+      "id": "ecda",
+      "movieTitle": "Hej",
+      "category": "Sven",
+      "movieSerie": "Movie"
     }
   ]
 }
