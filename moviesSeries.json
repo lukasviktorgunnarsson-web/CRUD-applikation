@@ -42,6 +42,5 @@
       "movieSerie": "Serie",
       "id": "9c33"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
