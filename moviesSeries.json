@@ -41,6 +41,12 @@
       "category": "Anime",
       "movieSerie": "Serie",
       "id": "9c33"
+    },
+    {
+      "id": "3c16",
+      "movieTitle": "Star Wars Revenge Of The Sith",
+      "category": "Fantasy",
+      "movieSerie": "Movie"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
