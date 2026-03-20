@@ -1,0 +1,53 @@
+{
+  "moviesSeries": [
+    {
+      "movieTitle": "The Last Dance",
+      "category": "Documentary",
+      "movieSerie": "Serie",
+      "id": "4"
+    },
+    {
+      "movieTitle": "How I Met Your Mother",
+      "category": "Comedy",
+      "movieSerie": "Serie",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "movieTitle": "The Conjuring",
+      "category": "Horror",
+      "movieSerie": "Movie"
+    },
+    {
+      "id": "4795",
+      "movieTitle": "Batman: The Dark Knight Rises",
+      "category": "Action",
+      "movieSerie": "Movie"
+    },
+    {
+      "id": "68b7",
+      "movieTitle": "Friends",
+      "category": "Comedy",
+      "movieSerie": "Movie"
+    },
+    {
+      "id": "8519",
+      "movieTitle": "Kurokos Basketball",
+      "category": "Anime",
+      "movieSerie": "Serie"
+    },
+    {
+      "movieTitle": "Attack of Titan",
+      "category": "Anime",
+      "movieSerie": "Serie",
+      "id": "9c33"
+    },
+    {
+      "id": "3451",
+      "movieTitle": "Star Wars Revenge Of The Sith",
+      "category": "Fantasy",
+      "movieSerie": "Movie"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
