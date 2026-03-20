@@ -160,9 +160,10 @@ saveMovieBtn.addEventListener("click", (e) => {
                     })
                         .then(res => res.json())
                         .then(data => {
+                            getAllMovies();
                         })
                         .catch(err => console.error("Error:", err));
-                        getAllMovies();
+                        
                 })
 
 
@@ -170,7 +171,7 @@ saveMovieBtn.addEventListener("click", (e) => {
 
 
 
-                
+
 async function movieSearch() {
 
     movieTitleSearch.addEventListener("input", e => {
