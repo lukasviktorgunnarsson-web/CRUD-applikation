@@ -59,6 +59,7 @@ async function movieSearch() {
                             });
                             const data = await response.json();
                             console.log(data)
+                            getAllMovies()
                         })
                 
                 if (editBtn) {
@@ -109,7 +110,7 @@ async function movieSearch() {
                                 
                                 if (response.ok) {
                                     console.log("Sparat");
-                                    location.reload();
+                                    getAllMovies()
                                 } else {
                                     console.log("Servern svarade med fel:", response.status);
                                 }
@@ -183,39 +184,41 @@ saveMovieBtn.addEventListener("click", (e) => {
         .then(res => res.json())
         .then(data => {
             getAllMovies();
+            console.log("Succes: ", data)
+            getAllMovies();
         })
         .catch(err => console.error("Error:", err));
-        location.reload();
+        
 })
 
 
-function printAllMovies(movies) {
-    const movieList = document.getElementById("movieList");
-    movieList.innerHTML = "";
+// function printAllMovies(movies) {
+//     const movieList = document.getElementById("movieList");
+//     movieList.innerHTML = "";
 
-    movies.forEach(movie => {
-        const li = document.createElement("li");
-        li.classList.add("list")
-        li.textContent = `${movie.movieTitle} - ${movie.category} - ${movie.movieSerie}`;
-        movieList.appendChild(li);
+//     movies.forEach(movie => {
+//         const li = document.createElement("li");
+//         li.classList.add("list")
+//         li.textContent = `${movie.movieTitle} - ${movie.category} - ${movie.movieSerie}`;
+//         movieList.appendChild(li);
 
-        let deleteBtn = document.createElement("button")
-        deleteBtn.innerText = "Delete"
-        li.appendChild(deleteBtn)
-        let editBtn = document.createElement("button")
-        editBtn.innerText = "Edit"
-        li.appendChild(editBtn)
+//         let deleteBtn = document.createElement("button")
+//         deleteBtn.innerText = "Delete"
+//         li.appendChild(deleteBtn)
+//         let editBtn = document.createElement("button")
+//         editBtn.innerText = "Edit"
+//         li.appendChild(editBtn)
 
-        deleteBtn.addEventListener("click", () => {
-            fetch("http://localhost:3000/moviesSeries/" + movie.id, {
-                method: "DELETE"
-            })
-                .then(res => res.json())
-                .catch(err => console.log(err));
-        });
+//         deleteBtn.addEventListener("click", () => {
+//             fetch("http://localhost:3000/moviesSeries/" + movie.id, {
+//                 method: "DELETE"
+//             })
+//                 .then(res => res.json())
+//                 .catch(err => console.log(err));
+//         });
 
-    })
+//     })
 
-}
+// }
 
 
