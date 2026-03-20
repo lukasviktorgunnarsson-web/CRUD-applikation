@@ -10,12 +10,13 @@
 </head>
 
 <body>
-    <h1>Movies and Series</h1>
+    <h1>Best movies and series of all time</h1>
 
     <div id="addInputs">
+        <h2 id="h1text">Add a banger movie or serie</h2>
         <input id="inputMovieTitle" type="text" placeholder="Movie Title">
         <input id="inputCategory" type="text" placeholder="Category">
-        
+
         <select id="selectMedia" name="media">
             <option value="Movie">Movie</option>
             <option value="Serie">Serie</option>
@@ -23,28 +24,43 @@
 
         <button id="saveMovieBtn">Add</button>
     </div>
-    
+
 
     <div id="searchInputs">
-        <input id="movieTitleSearch" type="text" placeholder="Movie Title">
-        <input id="categorySearch" type="text" placeholder="Category">
-        
+        <input id="movieTitleSearch"  type="search" placeholder="Search for Title or Category" data-search>
+        <!-- <input id="categorySearch" type="text" placeholder="Category">
+
         <select id="searchOption" name="media">
-            <option value="all">All</option>
+            <option value="All">All</option>
             <option value="Movie">Movie</option>
             <option value="Serie">Serie</option>
         </select>
-        <button id="searchBtn">Search</button>
+        <button id="searchBtn">Search</button> -->
     </div>
+    <!-- <template data-movie-template>
+        <div class="movie-cards" data-movie-cards-container>
+            <div class="header" data-header ></div>
+            <div class="body" data-body></div>
+        </div>
+    </template> -->
+    
     <div>
         <ul id="searchList"></ul>
     </div>
-    <div>
-        <button id="listAllBtn">Show all</button>
-        <button id="removeAllBtn">Clear</button>
-
-    </div>
+    
     <ul id="movieList"> </ul>
+    <template data-movie-template>
+        <div class="card">
+            <div class="headerTitle">
+            <h2 data-header></h2>
+            <button class="editBtn" data-edit-button>EDIT</button>
+            <button class="removeBtn" data-remove-button> X </button>
+            </div>
+            <div data-body></div>
+            <div data-body2></div>
+        </div>
+    </template>
+    <div data-movie-cards-container></div>
 </body>
 
 </html>

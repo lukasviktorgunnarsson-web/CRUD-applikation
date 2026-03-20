@@ -8,21 +8,152 @@ let inputMainCha = document.getElementById("inputMainCha")
 const saveMovieBtn = document.getElementById("saveMovieBtn")
 const listAllBtn = document.getElementById("listAllBtn")
 const removeAllBtn = document.getElementById("removeAllBtn")
-let movieTitleSearch = document.getElementById("movieTitleSearch")
-let categorySearch = document.getElementById("categorySearch")
-let searchOption = document.getElementById("searchOption")
+const movieTitleSearch = document.querySelector("[data-search]")
+let searchList = document.getElementById("searchList")
+const MovieCardTemplate = document.querySelector("[data-movie-template]")
+const movieCardsContainer = document.querySelector("[data-movie-cards-container]")
+
+const divHeader = document.querySelector("headerTitle")
+
+let movies = []
 
 
-// async function printMovies() {
-//     const response = await fetch("http://localhost:3000/moviesSeries")
-//     const data = await response.json();
-// }
+async function movieSearch() {
+
+    movieTitleSearch.addEventListener("input", e => {
+        const value = e.target.value.toLowerCase()
+        console.log(movies)
+
+
+        movies.forEach(movie => {
+            const isVisable = movie.title.toLowerCase().includes(value) ||
+                movie.category.toLowerCase().includes(value)
+            movie.element.classList.toggle("hide", !isVisable)
+        
+        })
+
+    })
+
+    fetch(`http://localhost:3000/moviesSeries`)
+        .then(res => res.json())
+        .then(data => {
+            movies = data.map(movie => {
+                const card = MovieCardTemplate.content.cloneNode(true).children[0]
+                const header = card.querySelector("[data-header")
+                const body = card.querySelector("[data-body]")
+                const body2 = card.querySelector("[data-body2]")
+                const removeBtn = card.querySelector(".removeBtn");
+                header.textContent = movie.movieTitle
+                body.textContent = movie.category
+                body2.textContent = movie.movieSerie
+
+                movieCardsContainer.append(card)
+                const editBtn = card.querySelector(".editBtn");
+                
+                removeBtn.addEventListener("click", async () => {
+                            console.log("click")
+                            console.log(removeBtn);
+                            
+                            const response = await fetch (`http://localhost:3000/moviesSeries/${movie.id}`, {
+                                method: "DELETE",
+                            });
+                            const data = await response.json();
+                            console.log(data)
+                        })
+                
+                if (editBtn) {
+                    editBtn.addEventListener("click", () => {
+
+                        console.log("Klick på:", movie.movieTitle);
+                        let editMovieInput = document.createElement("input")
+                        editMovieInput.classList.add("editModeMovieInput")
+                        let editCategoryInput = document.createElement("input")
+                        editCategoryInput.classList.add("editModeCategoryInput")
+                        let editMediaOption = document.createElement("select")
+                        editMediaOption.classList.add("mediaOptionEdit")
+                        editMediaOption.innerHTML = `
+                        <option value = "Movie">Movie</option>
+                        <option value = "Serie">Serie</option>`;
+                        let editMovieBtn = document.createElement("button")
+                        editMovieBtn.classList.add("SaveButtonEdit")
+                        editMovieBtn.innerText = "Save"
+
+                        header.textContent = "";
+                        body.textContent = "";
+                        body2.textContent = "";
+
+                        header.appendChild(editMovieInput);
+                        body.appendChild(editCategoryInput);
+                        body2.appendChild(editMediaOption);
+                        header.appendChild(editMovieBtn);
+                        editBtn.style.display = "none";
+
+                        editMovieBtn.addEventListener("click", async () => {
+                            console.log("Försöker spara")
+                            const updatedMovie = {
+                                movieTitle: editMovieInput.value,
+                                category: editCategoryInput.value,
+                                movieSerie: editMediaOption.value
+                            }
+
+
+                            try {
+                                const response = await fetch(`http://localhost:3000/moviesSeries/${movie.id}`, {
+                                    method: "PUT",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify(updatedMovie)
+                                }); 
+
+                                
+                                if (response.ok) {
+                                    console.log("Sparat");
+                                    location.reload();
+                                } else {
+                                    console.log("Servern svarade med fel:", response.status);
+                                }
+
+                            } catch (error) { 
+                                console.log("Nätverksfel eller krasch:", error);
+                            }
+                        });
+                        
+                        
+
+
+
+                        editMovieInput.value = movie.movieTitle;
+                        editCategoryInput.value = movie.category;
+                        editMediaOption.value = movie.movieSerie;
+                    });
+                }
+
+
+
+                return { title: movie.movieTitle, category: movie.category, element: card }
+            })
+
+        })
+
+
+
+
+};
+
+
+
+movieSearch()
+
+
+
+
 
 function getAllMovies() {
     fetch("http://localhost:3000/moviesSeries")
         .then(res => res.json())
         .then(data => {
-            console.log("data", data)
+            // console.log("data", data)
             data.map(user => {
             })
         });
@@ -31,6 +162,11 @@ function getAllMovies() {
 saveMovieBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
+    if(inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === ""){
+        alert("You have to write something")
+        return;
+    }
+    
     fetch("http://localhost:3000/moviesSeries", {
         method: "POST",
         headers: {
@@ -70,82 +206,15 @@ function printAllMovies(movies) {
         li.appendChild(editBtn)
 
         deleteBtn.addEventListener("click", () => {
-        fetch("http://localhost:3000/moviesSeries/" + movie.id, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .catch(err => console.log(err));
-    });
-
-
-        editBtn.addEventListener("click", (movies) => {
-
-            fetch ("http://localhost:3000/moviesSeries/")
-            let editMovieInput = document.createElement("input")
-            let editCategoryInput = document.createElement("input")
-            let editMediaOption = document.createElement("select")
-            editMediaOption.innerHTML=`
-            <option value = "Movie">Movie</option>
-            <option value = "Serie">Serie</option>
-            `;
-            let editMovieBtn = document.createElement("button")
-            editMovieBtn.innerText = "Save"
-
-            
-            li.appendChild(editMovieInput);
-            li.appendChild(editCategoryInput);
-            li.appendChild(editMediaOption);
-            li.appendChild(editMovieBtn);
-
-            editMovieInput.value = movie.movieTitle;
-            editCategoryInput.value = movie.category;
-            editMediaOption.value = movie.movieSerie;
-
-            editMovieBtn.addEventListener("click", () => {
-                editMovie()
+            fetch("http://localhost:3000/moviesSeries/" + movie.id, {
+                method: "DELETE"
             })
-        })
+                .then(res => res.json())
+                .catch(err => console.log(err));
+        });
+
     })
 
-    
 }
-
-async function editMovie(id){
-    const response = await fetch (`http://localhost:3000/moviesSeries/${id}`,{
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            movieTitle: editMovieInput.value,
-            category: editCategoryInput.value,
-            movieSerie: editMediaOption.value,
-        })
-        })
-        const data = await reponse.json();
-        console.log(data);
-
-
-}
-
-listAllBtn.addEventListener("click", () => {
-    fetch("http://localhost:3000/moviesSeries")
-        .then(response => response.json())
-        .then(data => {
-            printAllMovies(data);
-        })
-        .catch(error => console.error("Error:", error));
-});
-
-
-function removeAllMovies() {
-    const movieList = document.getElementById("movieList");
-    movieList.innerHTML = "";
-}
-
-removeAllBtn.addEventListener("click", () => {
-    removeAllMovies();
-});
-
 
 

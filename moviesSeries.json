@@ -1,16 +1,16 @@
 {
   "moviesSeries": [
     {
-      "id": "4",
       "movieTitle": "The Last Dance",
       "category": "Documentary",
-      "movieSerie": "Serie"
+      "movieSerie": "Serie",
+      "id": "4"
     },
     {
-      "id": "5",
       "movieTitle": "How I Met Your Mother",
       "category": "Comedy",
-      "movieSerie": "Serie"
+      "movieSerie": "Serie",
+      "id": "5"
     },
     {
       "id": "6",
@@ -37,10 +37,11 @@
       "movieSerie": "Serie"
     },
     {
-      "id": "ecda",
-      "movieTitle": "Hej",
-      "category": "Sven",
-      "movieSerie": "Movie"
+      "movieTitle": "Attack of Titan",
+      "category": "Anime",
+      "movieSerie": "Serie",
+      "id": "9c33"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
