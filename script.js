@@ -25,6 +25,7 @@ function getAllMovies() {
 
 
 
+
     fetch(`http://localhost:3000/moviesSeries`)
         .then(res => res.json())
         .then(data => {
@@ -161,8 +162,9 @@ saveMovieBtn.addEventListener("click", (e) => {
                         .then(res => res.json())
                         .then(data => {
                             getAllMovies();
-                            inputMovieTitle.value = ""
-                            inputCategory.value = ""
+                            inputMovieTitle.value = "";
+                            inputCategory.value = "";
+                            selectMedia.selectedIndex = 0;
                         })
                         .catch(err => console.error("Error:", err));
                         
