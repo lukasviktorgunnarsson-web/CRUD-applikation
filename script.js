@@ -161,6 +161,8 @@ saveMovieBtn.addEventListener("click", (e) => {
                         .then(res => res.json())
                         .then(data => {
                             getAllMovies();
+                            inputMovieTitle.value = ""
+                            inputCategory.value = ""
                         })
                         .catch(err => console.error("Error:", err));
                         
