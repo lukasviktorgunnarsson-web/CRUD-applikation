@@ -154,8 +154,7 @@ function getAllMovies() {
                         .then(data => {
                         })
                         .catch(err => console.error("Error:", err));
-                        location.reload();
-
+                        getAllMovies();
                 })
 
 
