@@ -160,18 +160,13 @@ saveMovieBtn.addEventListener("click", (e) => {
                             movieSerie: selectMedia.value,
 
                         })
-
+                        })
                     
                         .then(res => res.json())
                         .then(data => {
                             getAllMovies();
-                            inputMovieTitle.value = "";
-                            inputCategory.value = "";
-                            selectMedia.selectedIndex = 0;
                         })
                         .catch(err => console.error("Error:", err))
-                        
-                })
             });
 
 
