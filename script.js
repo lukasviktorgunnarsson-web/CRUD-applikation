@@ -270,36 +270,36 @@ movieSearch()
 
 
 
-saveMovieBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+// saveMovieBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
 
-    if (inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === "") {
-        alert("You have to write something")
-        return;
-    }
+//     if (inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === "") {
+//         alert("You have to write something")
+//         return;
+//     }
 
-    fetch("http://localhost:3000/moviesSeries", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            movieTitle: inputMovieTitle.value,
-            category: inputCategory.value,
-            movieSerie: selectMedia.value,
+//     fetch("http://localhost:3000/moviesSeries", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             movieTitle: inputMovieTitle.value,
+//             category: inputCategory.value,
+//             movieSerie: selectMedia.value,
 
-        })
+//         })
 
-    })
-        .then(res => res.json())
-        .then(data => {
-            getAllMovies();
-            console.log("Succes: ", data)
-            getAllMovies();
-        })
-        .catch(err => console.error("Error:", err));
+//     })
+//         .then(res => res.json())
+//         .then(data => {
+//             getAllMovies();
+//             console.log("Succes: ", data)
+//             getAllMovies();
+//         })
+//         .catch(err => console.error("Error:", err));
 
-})
+// })
 
 
 // function printAllMovies(movies) {
