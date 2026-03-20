@@ -41,12 +41,7 @@
       "category": "Anime",
       "movieSerie": "Serie",
       "id": "9c33"
-    },
-    {
-      "id": "c0e6",
-      "movieTitle": "Batman:The Dark Knight Rises",
-      "category": "Action",
-      "movieSerie": "Movie"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
