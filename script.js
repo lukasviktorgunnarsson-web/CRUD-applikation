@@ -146,30 +146,57 @@ saveMovieBtn.addEventListener("click", (e) => {
                         return;
                     }
 
-                    fetch("http://localhost:3000/moviesSeries", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            movieTitle: inputMovieTitle.value,
-                            category: inputCategory.value,
-                            movieSerie: selectMedia.value,
 
-                        })
+
+                    fetch("http://localhost:3000/moviesSeries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            movieTitle: inputMovieTitle.value,
+            category: inputCategory.value,
+            movieSerie: selectMedia.value
+        }) // ⬅️ Här stängs JSON.stringify
+    }) // ⬅️ HÄR stängs hela fetch-anropet (Detta är viktigt!)
+    
+    // 2. NU kan vi använda .then på resultatet av fetch
+    .then(res => res.json())
+    .then(data => {
+        console.log("Success", data);
+        getAllMovies(); 
+        
+        // Tömmer fälten
+        inputMovieTitle.value = "";
+        inputCategory.value = "";
+        selectMedia.selectedIndex = 0;
+    })
+    .catch(err => console.error("Error:", err));
+});
+            //         fetch("http://localhost:3000/moviesSeries", {
+            //             method: "POST",
+            //             headers: {
+            //                 "Content-Type": "application/json"
+            //             },
+            //             body: JSON.stringify({
+            //                 movieTitle: inputMovieTitle.value,
+            //                 category: inputCategory.value,
+            //                 movieSerie: selectMedia.value,
+
+            //             })
 
                     
-                        .then(res => res.json())
-                        .then(data => {
-                            getAllMovies();
-                            inputMovieTitle.value = "";
-                            inputCategory.value = "";
-                            selectMedia.selectedIndex = 0;
-                        })
-                        .catch(err => console.error("Error:", err))
+            //             .then(res => res.json())
+            //             .then(data => {
+            //                 getAllMovies();
+            //                 inputMovieTitle.value = "";
+            //                 inputCategory.value = "";
+            //                 selectMedia.selectedIndex = 0;
+            //             })
+            //             .catch(err => console.error("Error:", err))
                         
-                })
-            });
+            //     })
+            // });
 
 
 
