@@ -129,7 +129,15 @@ function getAllMovies() {
             })
 
         })
-        saveMovieBtn.addEventListener("click", (e) => {
+        
+
+
+
+
+}
+
+
+saveMovieBtn.addEventListener("click", (e) => {
                     e.preventDefault();
 
                     if (inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === "") {
@@ -160,7 +168,9 @@ function getAllMovies() {
 
 
 
-}
+
+
+                
 async function movieSearch() {
 
     movieTitleSearch.addEventListener("input", e => {
