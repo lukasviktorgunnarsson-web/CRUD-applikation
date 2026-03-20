@@ -158,7 +158,7 @@ saveMovieBtn.addEventListener("click", (e) => {
 
                         })
 
-                    })
+                    
                         .then(res => res.json())
                         .then(data => {
                             getAllMovies();
@@ -166,10 +166,10 @@ saveMovieBtn.addEventListener("click", (e) => {
                             inputCategory.value = "";
                             selectMedia.selectedIndex = 0;
                         })
-                        .catch(err => console.error("Error:", err));
+                        .catch(err => console.error("Error:", err))
                         
                 })
-
+            });
 
 
 
