@@ -185,6 +185,7 @@ saveMovieBtn.addEventListener("click", (e) => {
             getAllMovies();
         })
         .catch(err => console.error("Error:", err));
+        location.reload();
 })
 
 
