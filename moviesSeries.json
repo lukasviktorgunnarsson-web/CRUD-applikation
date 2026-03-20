@@ -1,76 +1,46 @@
 {
   "moviesSeries": [
     {
-      "id": "4",
       "movieTitle": "The Last Dance",
       "category": "Documentary",
-      "premier": 2020,
       "movieSerie": "Serie",
-      "mainCharacter": "Micael Jordan"
+      "id": "4"
     },
     {
-      "id": "5",
       "movieTitle": "How I Met Your Mother",
       "category": "Comedy",
-      "premier": 2005,
       "movieSerie": "Serie",
-      "mainCharacter": "Ted Mosby"
+      "id": "5"
     },
     {
       "id": "6",
       "movieTitle": "The Conjuring",
       "category": "Horror",
-      "premier": 2013,
-      "movieSerie": "Movie",
-      "mainCharacter": "Ed and Lorraine Warren"
+      "movieSerie": "Movie"
     },
     {
       "id": "4795",
       "movieTitle": "Batman: The Dark Knight Rises",
       "category": "Action",
-      "premier": "2012",
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
+      "movieSerie": "Movie"
     },
     {
       "id": "68b7",
       "movieTitle": "Friends",
       "category": "Comedy",
-      "premier": "1994",
-      "movieSerie": "Movie",
-      "mainCharacter": "Rachael"
+      "movieSerie": "Movie"
     },
     {
-      "id": "d103",
+      "id": "8519",
       "movieTitle": "Kurokos Basketball",
       "category": "Anime",
-      "premier": "2012",
+      "movieSerie": "Serie"
+    },
+    {
+      "movieTitle": "Attack of Titan",
+      "category": "Anime",
       "movieSerie": "Serie",
-      "mainCharacter": "Kuroko & Kagami"
-    },
-    {
-      "id": "dbf9",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "2012",
-      "movieSerie": "Serie",
-      "mainCharacter": "Kuroko & Kagami"
-    },
-    {
-      "id": "c8fa",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "22",
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
-    },
-    {
-      "id": "3fda",
-      "movieTitle": "Kurokos Basketball",
-      "category": "Anime",
-      "premier": "1994",
-      "movieSerie": "Movie",
-      "mainCharacter": "Batman"
+      "id": "9c33"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
