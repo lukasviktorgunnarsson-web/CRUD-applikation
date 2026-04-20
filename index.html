@@ -11,7 +11,11 @@
 
 <body>
     <h1>Best movies and series of all time</h1>
-
+    <div id="searchIdInputs">
+        <input id="GetEn" type="text" placeholder="Search by ID">
+        <button id="searchByIdBtn">Search</button>
+    </div>
+    <div id="resultDiv"></div>
     <div id="addInputs">
         <h2 id="h1text">Add a banger movie or serie</h2>
         <input id="inputMovieTitle" type="text" placeholder="Movie Title">
@@ -27,7 +31,7 @@
 
 
     <div id="searchInputs">
-        <input id="movieTitleSearch"  type="search" placeholder="Search for Title or Category" data-search>
+        <input id="movieTitleSearch" type="search" placeholder="Search for Title or Category" data-search>
         <!-- <input id="categorySearch" type="text" placeholder="Category">
 
         <select id="searchOption" name="media">
@@ -43,18 +47,18 @@
             <div class="body" data-body></div>
         </div>
     </template> -->
-    
+
     <div>
         <ul id="searchList"></ul>
     </div>
-    
+
     <ul id="movieList"> </ul>
     <template data-movie-template>
         <div class="card">
             <div class="headerTitle">
-            <h2 data-header></h2>
-            <button class="editBtn" data-edit-button>EDIT</button>
-            <button class="removeBtn" data-remove-button> X </button>
+                <h2 data-header></h2>
+                <button class="editBtn" data-edit-button>EDIT</button>
+                <button class="removeBtn" data-remove-button> X </button>
             </div>
             <div data-body></div>
             <div data-body2></div>

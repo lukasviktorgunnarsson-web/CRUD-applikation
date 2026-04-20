@@ -16,6 +16,53 @@ const movieCardsContainer = document.querySelector("[data-movie-cards-container]
 const divHeader = document.querySelector("headerTitle")
 
 let movies = []
+const showresultDiv = document.getElementById("resultDiv")
+const searchByIdBtn = document.getElementById("searchByIdBtn")
+const idSearchInput = document.getElementById("GetEn")
+const searchBtn = document.getElementById('searchByIdBtn');
+const idInput = document.getElementById('idInput');
+
+async function getMovieById(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/moviesSeries/${id.toString()}`);
+
+
+        if (!response.ok) {
+            throw new Error("Kunde inte hitta filmen/serien");
+            return;
+        }
+
+        const movie = await response.json();
+
+        showresultDiv.innerHTML = `
+      <div>
+        <h2>${movie.movieTitle}</h2>
+        <p>${movie.movieSerie}</p>
+        <p> ${movie.category}</p>
+        <p>ID: ${movie.id}</p>
+      </div>
+    `;
+    } catch (error) {
+        showresultDiv.innerHTML = `<p style="color: red;">${error.message}</p>`;
+    }
+}
+
+searchBtn.addEventListener('click', () => {
+    const id = idSearchInput.value;
+    if (id) {
+        getMovieById(id);
+    }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,7 +90,7 @@ function getAllMovies() {
                 const editBtn = card.querySelector(".editBtn");
 
 
-                
+
 
 
                 removeBtn.addEventListener("click", async () => {
@@ -130,7 +177,7 @@ function getAllMovies() {
             })
 
         })
-        
+
 
 
 
@@ -139,35 +186,35 @@ function getAllMovies() {
 
 
 saveMovieBtn.addEventListener("click", (e) => {
-                    e.preventDefault();
+    e.preventDefault();
 
-                    if (inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === "") {
-                        alert("You have to write something")
-                        return;
-                    }
+    if (inputMovieTitle.value.trim() === "" || inputCategory.value.trim() === "") {
+        alert("You have to write something")
+        return;
+    }
 
 
 
-                    
-                    fetch("http://localhost:3000/moviesSeries", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            movieTitle: inputMovieTitle.value,
-                            category: inputCategory.value,
-                            movieSerie: selectMedia.value,
 
-                        })
-                        })
-                    
-                        .then(res => res.json())
-                        .then(data => {
-                            getAllMovies();
-                        })
-                        .catch(err => console.error("Error:", err))
-            });
+    fetch("http://localhost:3000/moviesSeries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            movieTitle: inputMovieTitle.value,
+            category: inputCategory.value,
+            movieSerie: selectMedia.value,
+
+        })
+    })
+
+        .then(res => res.json())
+        .then(data => {
+            getAllMovies();
+        })
+        .catch(err => console.error("Error:", err))
+});
 
 
 

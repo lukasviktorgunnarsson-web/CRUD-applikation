@@ -37,11 +37,10 @@
       "movieSerie": "Serie"
     },
     {
-      "movieTitle": "Attack of Titan",
+      "movieTitle": "Attack on Titan",
       "category": "Anime",
       "movieSerie": "Serie",
       "id": "9c33"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
